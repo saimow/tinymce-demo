@@ -1,0 +1,14 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+$enable-ltr: true; /* stylelint-disable-line scss/dollar-variable-default */
+$enable-rtl: true; /* stylelint-disable-line scss/dollar-variable-default */
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import "@coreui/coreui/scss/coreui";
+
+@import "layout";
+
