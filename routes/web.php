@@ -53,6 +53,8 @@ Route::group(['middleware' => 'auth'], function(){
         Route::put('/posts/update/{post}', [PostController\Update::class, 'update'])->name('posts.update');
 
         Route::delete('/posts/delete', [PostController\Delete::class, 'destroy'])->name('posts.destroy');
+
+        Route::post('/posts/editor/upload', [PostController\Editor::class, 'upload'])->name('posts.editor.upload');
         // ----
     });
 });
