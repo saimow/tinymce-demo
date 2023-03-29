@@ -23,7 +23,7 @@
 @section('content')
 
 <h2 class="mb-2">Edit Post</h2>
-<div class="col-xxl-8 mb-4">
+<div class="col-xxl-10 mb-4">
     <div class="card">
         <div class="card-body p-4">
             <form action="{{ route('admin.posts.update', $post->id) }}" method="POST" class="">
@@ -38,7 +38,13 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label mb-1">Content</label>
-                    <textarea name="content" cols="30" rows="10" class="form-control @error('content') is-invalid @enderror" id='content'>{{ old('content', $post->content) }}</textarea>
+                    <div id="app">
+                        <Editor
+                            name='content'
+                            server="{{ route('admin.posts.editor.upload') }}"
+                            content="{{ old('content', $post->content) }}"
+                        />
+                    </div>
                     @error('content')
                         <p class="text-danger">{{ $message }}</p>
                     @enderror
